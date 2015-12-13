@@ -8,22 +8,81 @@
 
 import UIKit
 import Parse
+import Bolts
 
 class ViewController: UIViewController {
 
+    
+    @IBOutlet var txtnameuser: UITextField!
+    @IBOutlet var txtpass: UITextField!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        let testObject = PFObject(className: "TestObject")
-        testObject["foo"] = "bar"
-        testObject.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
-            print("Object has been saved.")
-        }
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func btningresar(sender: AnyObject)
+    {
+        let nameUser = txtnameuser.text
+        let pass = txtpass.text
+        
+        if nameUser == "" && pass == ""        {
+            
+            var alert = UIAlertView(title: "Campos obligatorios", message: "Ingrese nombre de usuario y contraseña ", delegate: self, cancelButtonTitle: "Aceptar")
+            alert.show()
+        }
+        else
+        {
+            if pass == ""
+            {
+                
+                var alert = UIAlertView(title: "Campo obligatorio", message: "Ingrese contraseña", delegate: self, cancelButtonTitle: "Aceptar")
+                alert.show()
+            }
+            else
+            {
+                if nameUser == ""
+                {
+                    
+                    var alert = UIAlertView(title: "Campo obligatorio", message: "Ingrese nombre de usuario", delegate: self, cancelButtonTitle: "Aceptar")
+                    alert.show()
+                }
+                
+                else
+                {
+                    PFUser.logInWithUsernameInBackground(nameUser!, password:pass!)
+                    {
+                        (user: PFUser?, error: NSError?) -> Void in
+                        if user != nil
+                        {
+                            // Do stuff after successful login.
+                        } else
+                        {
+                            var alert = UIAlertView(title: "Campo incorrectos", message: "Nombre de usuario o contraseña incorrectos", delegate: self, cancelButtonTitle: "Aceptar")
+                            alert.show()
+                        }
+                    }
+                }
+            }
+            
+        }
+        
+        
+        
+        
+        
+        
+        
+        
+            
     }
 
 
