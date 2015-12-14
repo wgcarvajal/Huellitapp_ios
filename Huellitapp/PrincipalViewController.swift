@@ -32,6 +32,14 @@ class PrincipalViewController: UIViewController , UICollectionViewDataSource, UI
     }
     
     
+    @IBAction func salir(sender: AnyObject)
+    {
+        PFUser.logOutInBackground()
+        self.performSegueWithIdentifier("cerrarSesion", sender: nil)
+        
+        
+        
+    }
 
     override func didReceiveMemoryWarning()
     {

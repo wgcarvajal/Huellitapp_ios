@@ -117,7 +117,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e3r-Ms-Za4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="145" y="-413"/>
+            <point key="canvasLocation" x="161" y="-432"/>
         </scene>
         <!--Item 2-->
         <scene sceneID="EOD-a1-cVS">
@@ -155,28 +155,32 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Mo5-uB-QyG">
-                                    <size key="itemSize" width="161" height="181"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="Mo5-uB-QyG">
+                                    <size key="itemSize" width="290" height="145"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="9"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" horizontalHuggingPriority="253" reuseIdentifier="celda" id="9yU-MC-k1D" customClass="CollectionViewCell" customModule="Huellitapp" customModuleProvider="target">
-                                        <rect key="frame" x="10" y="74" width="161" height="181"/>
+                                        <rect key="frame" x="10" y="74" width="290" height="145"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="161" height="181"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="290" height="145"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bnz-eL-fN1">
-                                                    <rect key="frame" x="0.0" y="0.0" width="160" height="154"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Bnz-eL-fN1">
+                                                    <rect key="frame" x="0.0" y="0.0" width="141" height="142"/>
                                                     <animations/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Nombre Mascota" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hex-za-rbG">
-                                                    <rect key="frame" x="4" y="160" width="152" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nombre Mascota" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hex-za-rbG">
+                                                    <rect key="frame" x="147" y="8" width="135" height="21"/>
                                                     <animations/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="135" id="T1K-be-7dB"/>
+                                                        <constraint firstAttribute="height" constant="21" id="fc1-uP-IiP"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" red="0.0" green="1" blue="0.0" alpha="0.77284482759999995" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -186,13 +190,12 @@
                                         </view>
                                         <animations/>
                                         <constraints>
-                                            <constraint firstItem="Hex-za-rbG" firstAttribute="centerX" secondItem="Bnz-eL-fN1" secondAttribute="centerX" id="1aW-td-Tpg"/>
-                                            <constraint firstItem="Hex-za-rbG" firstAttribute="leading" secondItem="9yU-MC-k1D" secondAttribute="leadingMargin" constant="-4" id="3UE-xX-Nqk"/>
-                                            <constraint firstAttribute="bottom" secondItem="Hex-za-rbG" secondAttribute="bottom" id="8mT-7J-K2s"/>
-                                            <constraint firstItem="Bnz-eL-fN1" firstAttribute="leading" secondItem="9yU-MC-k1D" secondAttribute="leading" id="966-9O-olL"/>
-                                            <constraint firstItem="Bnz-eL-fN1" firstAttribute="top" secondItem="9yU-MC-k1D" secondAttribute="top" id="A1W-cR-I7w"/>
-                                            <constraint firstItem="Hex-za-rbG" firstAttribute="top" secondItem="Bnz-eL-fN1" secondAttribute="bottom" constant="5" id="OQd-3z-fNv"/>
-                                            <constraint firstAttribute="trailing" secondItem="Bnz-eL-fN1" secondAttribute="trailing" id="wRn-SP-aYV"/>
+                                            <constraint firstItem="Hex-za-rbG" firstAttribute="leading" secondItem="Bnz-eL-fN1" secondAttribute="trailing" constant="6" id="CsJ-te-Y5u"/>
+                                            <constraint firstAttribute="bottomMargin" secondItem="Bnz-eL-fN1" secondAttribute="bottom" constant="-5" id="FZT-7E-2WU"/>
+                                            <constraint firstItem="Bnz-eL-fN1" firstAttribute="top" secondItem="9yU-MC-k1D" secondAttribute="top" id="Gvi-jX-cbD"/>
+                                            <constraint firstItem="Bnz-eL-fN1" firstAttribute="leading" secondItem="9yU-MC-k1D" secondAttribute="leading" id="HE9-eP-fqU"/>
+                                            <constraint firstItem="Hex-za-rbG" firstAttribute="trailing" secondItem="9yU-MC-k1D" secondAttribute="trailingMargin" id="lwP-Wz-N43"/>
+                                            <constraint firstItem="Hex-za-rbG" firstAttribute="top" secondItem="9yU-MC-k1D" secondAttribute="topMargin" id="zNJ-1u-neZ"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="imageView" destination="Bnz-eL-fN1" id="MLY-CA-i1z"/>
@@ -209,16 +212,24 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="yIY-V4-rd1" firstAttribute="bottom" secondItem="c6Q-nD-WB1" secondAttribute="top" id="aUf-ee-oL6"/>
-                            <constraint firstItem="yIY-V4-rd1" firstAttribute="leading" secondItem="fD4-Gz-kgE" secondAttribute="leading" id="dAy-iR-1yJ"/>
-                            <constraint firstItem="yIY-V4-rd1" firstAttribute="top" secondItem="fD4-Gz-kgE" secondAttribute="top" id="gt7-hW-3H6"/>
-                            <constraint firstAttribute="trailing" secondItem="yIY-V4-rd1" secondAttribute="trailing" id="qWj-Bn-gOV"/>
+                            <constraint firstItem="yIY-V4-rd1" firstAttribute="leading" secondItem="fD4-Gz-kgE" secondAttribute="leading" id="AIP-cm-b8O"/>
+                            <constraint firstAttribute="trailing" secondItem="yIY-V4-rd1" secondAttribute="trailing" id="DpF-8W-FpW"/>
+                            <constraint firstItem="yIY-V4-rd1" firstAttribute="top" secondItem="fD4-Gz-kgE" secondAttribute="top" id="PoA-qh-LE8"/>
+                            <constraint firstItem="yIY-V4-rd1" firstAttribute="bottom" secondItem="c6Q-nD-WB1" secondAttribute="top" id="gcl-io-Lkf"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Mascotas" id="R04-Zs-f2a"/>
+                    <navigationItem key="navigationItem" title="Mascotas" id="R04-Zs-f2a">
+                        <barButtonItem key="leftBarButtonItem" title="Salir" id="YHr-B3-vY1">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="salir:" destination="EE8-tg-2Sx" id="JXF-2T-LLw"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="collectionViewMascotas" destination="yIY-V4-rd1" id="zUW-sn-HkT"/>
                         <segue destination="g4o-CQ-RT9" kind="show" id="xGd-nr-mXk"/>
+                        <segue destination="bga-DP-Qvz" kind="show" identifier="cerrarSesion" id="6zC-gm-afy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dVD-Jx-uT3" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -373,8 +384,8 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Registrarse" id="Khp-wq-MDe">
-                        <barButtonItem key="rightBarButtonItem" title="Cancel" id="8VZ-pn-ecn">
-                            <color key="tintColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <barButtonItem key="leftBarButtonItem" title="Cancelar" id="8VZ-pn-ecn">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <segue destination="bga-DP-Qvz" kind="presentation" id="Z8A-Yz-ThP"/>
                             </connections>
@@ -401,6 +412,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <animations/>
+                        <color key="barTintColor" red="0.50980392156862742" green="1" blue="0.41176470588235292" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -409,7 +421,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IIG-Ff-xby" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-553" y="-413"/>
+            <point key="canvasLocation" x="-567" y="-432"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="JRJ-h4-AdL">
@@ -420,6 +432,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <animations/>
+                        <color key="barTintColor" red="0.50980392159999999" green="1" blue="0.41176470590000003" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -440,6 +453,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <animations/>
+                        <color key="barTintColor" red="0.50980392159999999" green="1" blue="0.41176470590000003" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -448,10 +462,13 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CsB-49-7fs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="537" y="294"/>
+            <point key="canvasLocation" x="549" y="370"/>
         </scene>
     </scenes>
     <resources>
         <image name="12064452_10207509501193409_1957503980_n" width="800" height="800"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="6zC-gm-afy"/>
+    </inferredMetricsTieBreakers>
 </document>
