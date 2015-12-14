@@ -22,6 +22,13 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+                
+        var currentUser = PFUser.currentUser()
+        if currentUser != nil {
+            self.performSegueWithIdentifier("showPrincipal", sender: nil)
+        }      
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -63,16 +70,7 @@ class ViewController: UIViewController {
                         (user: PFUser?, error: NSError?) -> Void in
                         if user != nil
                         {
-                            // Do stuff after successful login.
-                            let mainStoryBoard:UIStoryboard = UIStoryboard(name:"Main", bundle: nil)
-                            
-                            var mainPage:MainpageViewController = mainStoryBoard.instantiateViewControllerWithIdentifier("MainpageViewController") as! MainpageViewController
-                            
-                            var mainPageNav = UINavigationController(rootViewController: mainPage)
-                            
-                            var appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-                            
-                            appDelegate.window?.rootViewController = mainPageNav
+                            self.performSegueWithIdentifier("showPrincipal", sender: nil)
                             
                             
                         } else

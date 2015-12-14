@@ -1,5 +1,5 @@
 //
-//  MainpageViewController.swift
+//  MascotaViewController.swift
 //  Huellitapp
 //
 //  Created by Aplimovil on 14/12/15.
@@ -7,11 +7,10 @@
 //
 
 import UIKit
-import Parse
-import Bolts
 
-class MainpageViewController: UIViewController {
+class MascotaViewController: UIViewController {
 
+    @IBOutlet var imageView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,24 +23,6 @@ class MainpageViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func btnCerrarSession(sender: AnyObject)
-    {
-        
-        
-        PFUser.logOutInBackground()
-        
-        let mainStoryBoard:UIStoryboard = UIStoryboard(name:"Main", bundle: nil)
-        
-        var viewPage:ViewController = mainStoryBoard.instantiateViewControllerWithIdentifier("ViewController") as! ViewController
-        
-        var viewPageNav = UINavigationController(rootViewController: viewPage)
-        
-        var appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        
-        appDelegate.window?.rootViewController = viewPageNav
-        
-        
-    }
 
     /*
     // MARK: - Navigation
