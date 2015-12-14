@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Parse
+import Bolts
 
 class RegistrarseViewController: UIViewController
 {
@@ -29,6 +31,100 @@ class RegistrarseViewController: UIViewController
         // Dispose of any resources that can be recreated.
     }
     
+    
+    @IBAction func btnregistrarse(sender: AnyObject)
+    {
+        let nombres = txtnombres.text
+        let nameuser = txtnameuser.text
+        let contrasena = txtcontrasena.text
+        let repetircontrasena = txtrepetircontrasena.text
+        let email = txtemail.text
+        
+        if (nombres!.isEmpty || nameuser!.isEmpty || contrasena!.isEmpty || repetircontrasena!.isEmpty
+            || email!.isEmpty)
+        {
+            
+            
+            var myAlert = UIAlertController(title: "Campos obligatorios", message: "Todos los campos son obligatorios", preferredStyle: UIAlertControllerStyle.Alert)
+            
+            let okAction = UIAlertAction(title: "Aceptar", style: UIAlertActionStyle.Default, handler: nil)
+            
+            myAlert.addAction(okAction)
+            
+            self.presentViewController(myAlert, animated: true, completion: nil)
+            
+            return
+            
+        }
+        
+        if(contrasena != repetircontrasena)
+        {
+            var myAlert = UIAlertController(title: "Error", message: "Las contraseñas no coinciden", preferredStyle: UIAlertControllerStyle.Alert)
+            
+            let okAction = UIAlertAction(title: "Aceptar", style: UIAlertActionStyle.Default, handler: nil)
+            
+            myAlert.addAction(okAction)
+            
+            self.presentViewController(myAlert, animated: true, completion: nil)
+            
+            return
+        }
+        
+        
+        let myUser:PFUser = PFUser()
+        myUser.username = nameuser
+        myUser.password = contrasena
+        myUser.email = email
+        myUser.setObject(nombres!, forKey: "nombre")
+        
+        myUser.signUpInBackgroundWithBlock{(success: Bool, error:NSError?) -> Void in
+            
+            var mensaje = "Registro Exitoso"
+            
+            if(!success)
+            {
+                if(error!.code == 202)
+                {
+                    mensaje = "Nombre de usuario " + nameuser! + " Ya esta en uso"
+                    
+                }
+                else
+                {
+                    if(error!.code == 203)
+                    {
+                        mensaje = "Correo electrónico Ya esta en uso"
+                    }
+                    else
+                    {
+                        mensaje = error!.localizedDescription
+                    }
+                }
+                
+            }
+            
+            var myAlert = UIAlertController(title: "Alerta", message: mensaje, preferredStyle: UIAlertControllerStyle.Alert)
+            
+            let okAction = UIAlertAction(title: "Aceptar", style: UIAlertActionStyle.Default){ Action in
+                
+                if(success)
+                {
+                    self.dismissViewControllerAnimated(true, completion: nil)
+                }
+            }
+            
+            myAlert.addAction(okAction)
+            
+            self.presentViewController(myAlert, animated: true, completion: nil)
+            
+            
+                
+        }
+        
+        
+        
+    }
+    
+    
 
     /*
     // MARK: - Navigation
@@ -41,11 +137,6 @@ class RegistrarseViewController: UIViewController
     */
     
     
-    @IBAction func btnregistrarse(sender: AnyObject)
-    {
-        
-        
-    }
     
     
     

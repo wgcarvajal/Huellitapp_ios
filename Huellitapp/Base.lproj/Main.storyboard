@@ -9,7 +9,7 @@
         <!--Iniciar sesión-->
         <scene sceneID="wbS-PR-TKp">
             <objects>
-                <viewController id="WaU-vf-qbm" customClass="ViewController" customModule="Huellitapp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewController" id="WaU-vf-qbm" customClass="ViewController" customModule="Huellitapp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="zUq-Vi-6JW"/>
                         <viewControllerLayoutGuide type="bottom" id="bBS-k9-SSL"/>
@@ -46,6 +46,25 @@
                                     </mask>
                                 </variation>
                             </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Contraseña" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3fQ-tQ-5jh">
+                                <rect key="frame" x="20" y="412" width="560" height="30"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="NEM-2M-Kgg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aj5-8B-Nfq">
+                                <rect key="frame" x="243" y="512" width="114" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Registrarse">
+                                    <color key="titleColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="rUZ-fk-6kn" kind="presentation" id="ihA-NK-OxQ"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yaA-cl-O2m">
                                 <rect key="frame" x="243" y="463" width="114" height="30"/>
                                 <animations/>
@@ -67,25 +86,6 @@
                                 </variation>
                                 <connections>
                                     <action selector="btningresar:" destination="WaU-vf-qbm" eventType="touchUpInside" id="e1V-JF-XCX"/>
-                                </connections>
-                            </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Contraseña" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3fQ-tQ-5jh">
-                                <rect key="frame" x="20" y="412" width="560" height="30"/>
-                                <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="NEM-2M-Kgg"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aj5-8B-Nfq">
-                                <rect key="frame" x="243" y="512" width="114" height="30"/>
-                                <animations/>
-                                <state key="normal" title="Registrarse">
-                                    <color key="titleColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <segue destination="rUZ-fk-6kn" kind="presentation" id="ihA-NK-OxQ"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -118,6 +118,32 @@
             </objects>
             <point key="canvasLocation" x="145" y="-413"/>
         </scene>
+        <!--Mainpage View Controller-->
+        <scene sceneID="2r9-Zp-R3P">
+            <objects>
+                <viewController storyboardIdentifier="MainpageViewController" id="sPg-Tk-sc9" customClass="MainpageViewController" customModule="Huellitapp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3UH-KH-BhS"/>
+                        <viewControllerLayoutGuide type="bottom" id="jJW-Zi-b1X"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="wFS-hq-AfA">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="n1c-tb-hzi">
+                        <barButtonItem key="leftBarButtonItem" title="Cerrar sesión" id="NxV-ef-fdf">
+                            <connections>
+                                <action selector="btnCerrarSession:" destination="sPg-Tk-sc9" id="Xk2-4J-zAj"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YT7-fL-hwD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="195" y="328"/>
+        </scene>
         <!--Registrarse-->
         <scene sceneID="tuS-gS-8Zt">
             <objects>
@@ -130,12 +156,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nombres" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="fcq-hu-bhn">
-                                <rect key="frame" x="20" y="125" width="560" height="30"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nombre de usuario" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="m4i-pZ-BRB">
                                 <rect key="frame" x="20" y="179" width="560" height="30"/>
                                 <animations/>
@@ -152,7 +172,7 @@
                                 <rect key="frame" x="20" y="285" width="560" height="30"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Correo electrónico" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3az-IP-MWo">
                                 <rect key="frame" x="20" y="336" width="560" height="30"/>
@@ -161,7 +181,7 @@
                                     <constraint firstAttribute="height" constant="30" id="0nj-UR-CgN"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bZg-hz-EQX">
                                 <rect key="frame" x="230" y="401" width="141" height="38"/>
@@ -179,6 +199,12 @@
                                     <action selector="btnregistrarse:" destination="341-G6-1x0" eventType="touchUpInside" id="6Mk-F9-ZYN"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nombres" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="fcq-hu-bhn">
+                                <rect key="frame" x="20" y="125" width="560" height="30"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -206,6 +232,9 @@
                     <navigationItem key="navigationItem" title="Registrarse" id="Khp-wq-MDe">
                         <barButtonItem key="rightBarButtonItem" title="Cancel" id="8VZ-pn-ecn">
                             <color key="tintColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <segue destination="bga-DP-Qvz" kind="presentation" id="Z8A-Yz-ThP"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -256,7 +285,26 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EUn-IQ-B8a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="831" y="-413"/>
+            <point key="canvasLocation" x="833" y="-401"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="gg1-DB-uY3">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="91N-Ux-y1U" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="REG-4i-5e0">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="sPg-Tk-sc9" kind="relationship" relationship="rootViewController" id="NEQ-t0-Rse"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="78q-7N-efJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-553" y="328"/>
         </scene>
     </scenes>
     <resources>

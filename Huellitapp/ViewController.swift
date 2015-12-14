@@ -64,6 +64,17 @@ class ViewController: UIViewController {
                         if user != nil
                         {
                             // Do stuff after successful login.
+                            let mainStoryBoard:UIStoryboard = UIStoryboard(name:"Main", bundle: nil)
+                            
+                            var mainPage:MainpageViewController = mainStoryBoard.instantiateViewControllerWithIdentifier("MainpageViewController") as! MainpageViewController
+                            
+                            var mainPageNav = UINavigationController(rootViewController: mainPage)
+                            
+                            var appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+                            
+                            appDelegate.window?.rootViewController = mainPageNav
+                            
+                            
                         } else
                         {
                             var alert = UIAlertView(title: "Campo incorrectos", message: "Nombre de usuario o contraseña incorrectos", delegate: self, cancelButtonTitle: "Aceptar")

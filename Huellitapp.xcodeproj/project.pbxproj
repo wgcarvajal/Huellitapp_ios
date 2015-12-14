@@ -25,6 +25,7 @@
 		1B521F291C1DC8C200A35A63 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B521F281C1DC8C200A35A63 /* libz.tbd */; };
 		1B521F2B1C1DC8CE00A35A63 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B521F2A1C1DC8CE00A35A63 /* libsqlite3.tbd */; };
 		1B7B575F1C1E7BA3000D29A9 /* RegistrarseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7B575E1C1E7BA3000D29A9 /* RegistrarseViewController.swift */; };
+		1B7B57611C1E9DF0000D29A9 /* MainpageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7B57601C1E9DF0000D29A9 /* MainpageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		1B521F281C1DC8C200A35A63 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		1B521F2A1C1DC8CE00A35A63 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		1B7B575E1C1E7BA3000D29A9 /* RegistrarseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrarseViewController.swift; sourceTree = "<group>"; };
+		1B7B57601C1E9DF0000D29A9 /* MainpageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainpageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 				1B521F0A1C1DC67800A35A63 /* LaunchScreen.storyboard */,
 				1B521F0D1C1DC67800A35A63 /* Info.plist */,
 				1B7B575E1C1E7BA3000D29A9 /* RegistrarseViewController.swift */,
+				1B7B57601C1E9DF0000D29A9 /* MainpageViewController.swift */,
 			);
 			path = Huellitapp;
 			sourceTree = "<group>";
@@ -194,6 +197,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B7B57611C1E9DF0000D29A9 /* MainpageViewController.swift in Sources */,
 				1B7B575F1C1E7BA3000D29A9 /* RegistrarseViewController.swift in Sources */,
 				1B521F041C1DC67800A35A63 /* ViewController.swift in Sources */,
 				1B521F021C1DC67800A35A63 /* AppDelegate.swift in Sources */,
