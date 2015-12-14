@@ -24,6 +24,7 @@
 		1B521F271C1DC8AF00A35A63 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B521F261C1DC8AF00A35A63 /* SystemConfiguration.framework */; };
 		1B521F291C1DC8C200A35A63 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B521F281C1DC8C200A35A63 /* libz.tbd */; };
 		1B521F2B1C1DC8CE00A35A63 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B521F2A1C1DC8CE00A35A63 /* libsqlite3.tbd */; };
+		1B7B575F1C1E7BA3000D29A9 /* RegistrarseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7B575E1C1E7BA3000D29A9 /* RegistrarseViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		1B521F261C1DC8AF00A35A63 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		1B521F281C1DC8C200A35A63 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		1B521F2A1C1DC8CE00A35A63 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		1B7B575E1C1E7BA3000D29A9 /* RegistrarseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrarseViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 				1B521F081C1DC67800A35A63 /* Assets.xcassets */,
 				1B521F0A1C1DC67800A35A63 /* LaunchScreen.storyboard */,
 				1B521F0D1C1DC67800A35A63 /* Info.plist */,
+				1B7B575E1C1E7BA3000D29A9 /* RegistrarseViewController.swift */,
 			);
 			path = Huellitapp;
 			sourceTree = "<group>";
@@ -191,6 +194,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B7B575F1C1E7BA3000D29A9 /* RegistrarseViewController.swift in Sources */,
 				1B521F041C1DC67800A35A63 /* ViewController.swift in Sources */,
 				1B521F021C1DC67800A35A63 /* AppDelegate.swift in Sources */,
 			);
@@ -350,6 +354,7 @@
 				1B521F121C1DC67800A35A63 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
