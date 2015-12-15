@@ -1,5 +1,5 @@
 //
-//  PrincipalViewController.swift
+//  MismascotasViewController.swift
 //  Huellitapp
 //
 //  Created by Aplimovil on 14/12/15.
@@ -10,41 +10,30 @@ import UIKit
 import Parse
 import Bolts
 
+var mismascotas = [PFObject]()
 
-var mascotas = [PFObject]()
+class MismascotasViewController: UIViewController , UICollectionViewDataSource, UICollectionViewDelegate{
 
-class PrincipalViewController: UIViewController , UICollectionViewDataSource, UICollectionViewDelegate {
-
-    
-    
-    @IBOutlet var collectionViewMascotas: UICollectionView!
-    
-   
-    
-    
-    
+    @IBOutlet var collectionView: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        
-        
     }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
     
     
     @IBAction func salir(sender: AnyObject)
     {
+        
         PFUser.logOutInBackground()
         self.performSegueWithIdentifier("cerrarSesion", sender: nil)
         
-        
-        
-    }
-
-    override func didReceiveMemoryWarning()
-    {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     override func viewDidAppear(animated: Bool)
@@ -57,42 +46,42 @@ class PrincipalViewController: UIViewController , UICollectionViewDataSource, UI
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let celda:CollectionViewCell = collectionView.dequeueReusableCellWithReuseIdentifier("celda", forIndexPath: indexPath) as! CollectionViewCell
+        let celda:MimascotaCollectionViewCell = collectionView.dequeueReusableCellWithReuseIdentifier("celdaMiMascota", forIndexPath: indexPath) as! MimascotaCollectionViewCell
         
         //celda.fechaEvento.text = self.data[indexPath.row]
         //celda.nombreEvento.text = self.data[indexPath.row]
         
-        if let nombre = mascotas[indexPath.row]["masnombre"] as? String{
-            celda.titleLabel.text = nombre
+        if let nombre = mismascotas[indexPath.row]["masnombre"] as? String{
+            celda.lblnombre.text = nombre
         }
         
-        if let tipo = mascotas[indexPath.row]["tiponombre"] as? String{
-           
+        if let tipo = mismascotas[indexPath.row]["tiponombre"] as? String{
+            
             var edad=" años"
             if(tipo == "Cachorros")
             {
                 edad = " meses"
             }
             
-            if let edadMascota = mascotas[indexPath.row]["masedad"] as? String{
-                celda.labelEdad.text = edadMascota + edad
+            if let edadMascota = mismascotas[indexPath.row]["masedad"] as? String{
+                celda.lbledad.text = edadMascota + edad
             }
             
             
         }
         
-        if let descripcion = mascotas[indexPath.row]["masdescripcion"] as? String{
-            celda.descripcionLabel.text = descripcion
+        if let descripcion = mismascotas[indexPath.row]["masdescripcion"] as? String{
+            celda.lblDescripcion.text = descripcion
         }
         
         let query = PFQuery(className:"fotomascota")
-        query.whereKey("mascota", equalTo:mascotas[indexPath.row].objectId!)
+        query.whereKey("mascota", equalTo:mismascotas[indexPath.row].objectId!)
         query.findObjectsInBackgroundWithBlock {
             (objects: [PFObject]?, error: NSError?) -> Void in
             
             if error == nil {
                 
-                if let objects = objects {                    
+                if let objects = objects {
                     if let value = objects[0]["foto"] as? PFFile {
                         //let finalImage = eventos[indexPath.row]["foto"] as? PFFile
                         value.getDataInBackgroundWithBlock {
@@ -120,28 +109,42 @@ class PrincipalViewController: UIViewController , UICollectionViewDataSource, UI
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return mascotas.count
+        return mismascotas.count
     }
     
     func cargardata(){
+        
+        var currentuser = PFUser.currentUser()?.username
         let query = PFQuery(className: "mascota")
+        query.whereKey("username", equalTo: currentuser!)
         
         query.findObjectsInBackgroundWithBlock { (objects:[PFObject]?, error: NSError?) -> Void in
             
             if error == nil{
                 
-                mascotas.removeAll(keepCapacity: true)
+                mismascotas.removeAll(keepCapacity: true)
                 
                 if let objects = objects {
-                    mascotas = Array(objects.generate())
+                    mismascotas = Array(objects.generate())
                 }
                 
-                self.collectionViewMascotas.reloadData()
+                self.collectionView.reloadData()
             }else{
                 print("Error: \(error) \(error!.userInfo)")
             }
         }
     }
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     
 

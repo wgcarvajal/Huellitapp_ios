@@ -28,6 +28,8 @@
 		1B7B575F1C1E7BA3000D29A9 /* RegistrarseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7B575E1C1E7BA3000D29A9 /* RegistrarseViewController.swift */; };
 		1B87B0FC1C1F56460088DD8A /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B87B0FB1C1F56460088DD8A /* CollectionViewCell.swift */; };
 		1B87B0FE1C1F569A0088DD8A /* MascotaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B87B0FD1C1F569A0088DD8A /* MascotaViewController.swift */; };
+		1B87B1001C1F851A0088DD8A /* MismascotasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B87B0FF1C1F851A0088DD8A /* MismascotasViewController.swift */; };
+		1B87B1021C1F88230088DD8A /* MimascotaCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B87B1011C1F88230088DD8A /* MimascotaCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +56,8 @@
 		1B7B575E1C1E7BA3000D29A9 /* RegistrarseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrarseViewController.swift; sourceTree = "<group>"; };
 		1B87B0FB1C1F56460088DD8A /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		1B87B0FD1C1F569A0088DD8A /* MascotaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MascotaViewController.swift; sourceTree = "<group>"; };
+		1B87B0FF1C1F851A0088DD8A /* MismascotasViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MismascotasViewController.swift; sourceTree = "<group>"; };
+		1B87B1011C1F88230088DD8A /* MimascotaCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MimascotaCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +113,8 @@
 				1B63D2841C1F2275001D3176 /* PrincipalViewController.swift */,
 				1B87B0FB1C1F56460088DD8A /* CollectionViewCell.swift */,
 				1B87B0FD1C1F569A0088DD8A /* MascotaViewController.swift */,
+				1B87B0FF1C1F851A0088DD8A /* MismascotasViewController.swift */,
+				1B87B1011C1F88230088DD8A /* MimascotaCollectionViewCell.swift */,
 			);
 			path = Huellitapp;
 			sourceTree = "<group>";
@@ -205,6 +211,8 @@
 			files = (
 				1B87B0FC1C1F56460088DD8A /* CollectionViewCell.swift in Sources */,
 				1B87B0FE1C1F569A0088DD8A /* MascotaViewController.swift in Sources */,
+				1B87B1001C1F851A0088DD8A /* MismascotasViewController.swift in Sources */,
+				1B87B1021C1F88230088DD8A /* MimascotaCollectionViewCell.swift in Sources */,
 				1B7B575F1C1E7BA3000D29A9 /* RegistrarseViewController.swift in Sources */,
 				1B63D2851C1F2275001D3176 /* PrincipalViewController.swift in Sources */,
 				1B521F041C1DC67800A35A63 /* ViewController.swift in Sources */,

@@ -13,10 +13,11 @@ class CollectionViewCell: UICollectionViewCell
     
     
     @IBOutlet var imageView: UIImageView!
+    @IBOutlet var titleLabel: UILabel!   
    
-    @IBOutlet var titleLabel: UILabel!
-   
+    @IBOutlet var labelEdad: UILabel!
     
     
+    @IBOutlet var descripcionLabel: UILabel!
     
 }
