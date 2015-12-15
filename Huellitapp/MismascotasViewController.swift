@@ -140,7 +140,19 @@ class MismascotasViewController: UIViewController , UICollectionViewDataSource, 
     
     
     
-    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if segue.identifier == "mostrarMiMascota"{
+            
+            let indexPaths = self.collectionView.indexPathsForSelectedItems()!
+            let indexPath = indexPaths[0] as NSIndexPath
+            
+            let vc = segue.destinationViewController as! MimascotaViewController
+            vc.mascota = mismascotas[indexPath.row]
+        }
+        
+    }
+
     
     
     

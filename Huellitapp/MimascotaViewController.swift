@@ -1,8 +1,8 @@
 //
-//  MascotaViewController.swift
+//  MimascotaViewController.swift
 //  Huellitapp
 //
-//  Created by Aplimovil on 14/12/15.
+//  Created by Aplimovil on 15/12/15.
 //  Copyright © 2015 Aplimovil. All rights reserved.
 //
 
@@ -10,11 +10,9 @@ import UIKit
 import Parse
 import Bolts
 
-class MascotaViewController: UIViewController {
-    
-    
-    
-    @IBOutlet var fotoMascota: UIImageView!
+class MimascotaViewController: UIViewController {
+
+    @IBOutlet var fotomascota: UIImageView!
     @IBOutlet var lbldescripcion: UILabel!
     @IBOutlet var lbledad: UILabel!
     
@@ -22,6 +20,7 @@ class MascotaViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         
         lbldescripcion.text = mascota["masdescripcion"] as! String
         lbledad.text = mascota["masedad"] as! String
@@ -33,7 +32,6 @@ class MascotaViewController: UIViewController {
         {
             lbledad.text = lbledad.text! + " años"
         }
-        
         
         
         
@@ -52,7 +50,7 @@ class MascotaViewController: UIViewController {
                             (imageData: NSData?, error: NSError?) -> Void in
                             if error == nil {
                                 if let imageData = imageData {
-                                    self.fotoMascota.image = UIImage(data:imageData)
+                                    self.fotomascota.image = UIImage(data:imageData)
                                 }
                             }
                         }
@@ -63,9 +61,12 @@ class MascotaViewController: UIViewController {
                 print("Error: \(error!) \(error!.userInfo)")
             }
         }
-
+        
         
         self.title = mascota["masnombre"] as? String
+
+
+
         // Do any additional setup after loading the view.
     }
 
@@ -74,24 +75,19 @@ class MascotaViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if(segue.identifier == "mostrarGalleria")
-        {
-            let vc = segue.destinationViewController as! GalleriaViewController
-            vc.mascota = mascota
-            
-            
-        }
-        else
-        {
-            if(segue.identifier == "enviarMensaje")
-            {
-                let mc = segue.destinationViewController as! MensajeDuenoViewController
-                mc.mascota = mascota
-            }
-        }
-    }
     
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if segue.identifier == "enviarMensaje"{
+            
+            
+            
+            let mc = segue.destinationViewController as! MensajeInteresadoViewController
+            mc.mascota = mascota
+        }
+        
+    }
     
 
     /*

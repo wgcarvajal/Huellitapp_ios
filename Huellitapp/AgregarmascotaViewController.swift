@@ -89,7 +89,18 @@ class AgregarmascotaViewController: UIViewController ,UIImagePickerControllerDel
                     photo.saveInBackgroundWithBlock({ (successfoto:Bool, errorfoto:NSError?) -> Void in
                         if(successfoto)
                         {
+                            self.fotoMascota.image=nil
+                            self.txtnombre.text = ""
+                            self.txtDescripcion.text = ""
+                            var myAlert = UIAlertController(title: "info", message: "Registro de mascota exitoso", preferredStyle: UIAlertControllerStyle.Alert)
                             
+                            let okAction = UIAlertAction(title: "Aceptar", style: UIAlertActionStyle.Default, handler: nil)
+                            
+                            myAlert.addAction(okAction)
+                            
+                            self.presentViewController(myAlert, animated: true, completion: nil)
+                            
+                            return
                         }
                         else
                         {
