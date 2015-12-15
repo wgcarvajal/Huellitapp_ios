@@ -30,6 +30,9 @@
 		1B87B0FE1C1F569A0088DD8A /* MascotaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B87B0FD1C1F569A0088DD8A /* MascotaViewController.swift */; };
 		1B87B1001C1F851A0088DD8A /* MismascotasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B87B0FF1C1F851A0088DD8A /* MismascotasViewController.swift */; };
 		1B87B1021C1F88230088DD8A /* MimascotaCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B87B1011C1F88230088DD8A /* MimascotaCollectionViewCell.swift */; };
+		1BFB50AC1C1FF1A200E00F8D /* ItemgalleriaCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFB50AB1C1FF1A200E00F8D /* ItemgalleriaCollectionViewCell.swift */; };
+		1BFB50AE1C1FF27C00E00F8D /* GalleriaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFB50AD1C1FF27C00E00F8D /* GalleriaViewController.swift */; };
+		1BFB93D41C1FCD790060D398 /* AgregarmascotaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFB93D31C1FCD790060D398 /* AgregarmascotaViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +61,9 @@
 		1B87B0FD1C1F569A0088DD8A /* MascotaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MascotaViewController.swift; sourceTree = "<group>"; };
 		1B87B0FF1C1F851A0088DD8A /* MismascotasViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MismascotasViewController.swift; sourceTree = "<group>"; };
 		1B87B1011C1F88230088DD8A /* MimascotaCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MimascotaCollectionViewCell.swift; sourceTree = "<group>"; };
+		1BFB50AB1C1FF1A200E00F8D /* ItemgalleriaCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemgalleriaCollectionViewCell.swift; sourceTree = "<group>"; };
+		1BFB50AD1C1FF27C00E00F8D /* GalleriaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GalleriaViewController.swift; sourceTree = "<group>"; };
+		1BFB93D31C1FCD790060D398 /* AgregarmascotaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgregarmascotaViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +121,9 @@
 				1B87B0FD1C1F569A0088DD8A /* MascotaViewController.swift */,
 				1B87B0FF1C1F851A0088DD8A /* MismascotasViewController.swift */,
 				1B87B1011C1F88230088DD8A /* MimascotaCollectionViewCell.swift */,
+				1BFB93D31C1FCD790060D398 /* AgregarmascotaViewController.swift */,
+				1BFB50AB1C1FF1A200E00F8D /* ItemgalleriaCollectionViewCell.swift */,
+				1BFB50AD1C1FF27C00E00F8D /* GalleriaViewController.swift */,
 			);
 			path = Huellitapp;
 			sourceTree = "<group>";
@@ -209,9 +218,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1BFB50AC1C1FF1A200E00F8D /* ItemgalleriaCollectionViewCell.swift in Sources */,
 				1B87B0FC1C1F56460088DD8A /* CollectionViewCell.swift in Sources */,
 				1B87B0FE1C1F569A0088DD8A /* MascotaViewController.swift in Sources */,
+				1BFB50AE1C1FF27C00E00F8D /* GalleriaViewController.swift in Sources */,
 				1B87B1001C1F851A0088DD8A /* MismascotasViewController.swift in Sources */,
+				1BFB93D41C1FCD790060D398 /* AgregarmascotaViewController.swift in Sources */,
 				1B87B1021C1F88230088DD8A /* MimascotaCollectionViewCell.swift in Sources */,
 				1B7B575F1C1E7BA3000D29A9 /* RegistrarseViewController.swift in Sources */,
 				1B63D2851C1F2275001D3176 /* PrincipalViewController.swift in Sources */,

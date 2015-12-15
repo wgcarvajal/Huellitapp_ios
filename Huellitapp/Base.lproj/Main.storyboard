@@ -4,6 +4,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
     </dependencies>
     <scenes>
         <!--Iniciar sesión-->
@@ -227,6 +228,7 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Mis Mascotas" id="Ju9-tb-cUo">
+                        <barButtonItem key="backBarButtonItem" title="Atras" id="XGt-bA-aL6"/>
                         <barButtonItem key="leftBarButtonItem" title="Salir" id="H39-3x-T22">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
@@ -235,6 +237,9 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Agregar" id="vlm-xr-2q0">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <segue destination="GXI-Lo-9b7" kind="show" id="6Nl-NJ-uBh"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
@@ -245,7 +250,97 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8mj-k4-Gen" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1461" y="1106"/>
+            <point key="canvasLocation" x="1383" y="1101"/>
+        </scene>
+        <!--Agregar Mascota-->
+        <scene sceneID="D4o-em-9U2">
+            <objects>
+                <viewController id="GXI-Lo-9b7" customClass="AgregarmascotaViewController" customModule="Huellitapp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7kX-n0-FPM"/>
+                        <viewControllerLayoutGuide type="bottom" id="7Ec-jd-iQh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="lmW-lF-UsK">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="d8v-z7-QWA">
+                                <rect key="frame" x="20" y="85" width="163" height="163"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="163" id="C8R-pH-vWm"/>
+                                    <constraint firstAttribute="width" constant="163" id="wtb-Uz-PPB"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eBK-V0-zLC">
+                                <rect key="frame" x="191" y="146" width="135" height="30"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="135" id="DpJ-VE-RD6"/>
+                                    <constraint firstAttribute="height" constant="30" id="N5R-Zl-hpY"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" title="Seleccionar Imagen">
+                                    <color key="titleColor" red="0.50980392159999999" green="1" blue="0.41176470590000003" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="btnSeleccionar:" destination="GXI-Lo-9b7" eventType="touchUpInside" id="TfS-6Z-erA"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nombre" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VJn-94-V4m">
+                                <rect key="frame" x="20" y="277" width="560" height="30"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cak-hw-MEA">
+                                <rect key="frame" x="88" y="378" width="155" height="30"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.50980392159999999" green="1" blue="0.41176470590000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="155" id="N85-u2-aZk"/>
+                                </constraints>
+                                <state key="normal" title="Agregar">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="btnAgregar:" destination="GXI-Lo-9b7" eventType="touchUpInside" id="nT4-pt-PZV"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Descripcion" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kjM-yS-CvZ">
+                                <rect key="frame" x="20" y="327" width="560" height="30"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="eBK-V0-zLC" firstAttribute="top" secondItem="7kX-n0-FPM" secondAttribute="bottom" constant="82" id="8ma-rC-hie"/>
+                            <constraint firstItem="VJn-94-V4m" firstAttribute="top" secondItem="d8v-z7-QWA" secondAttribute="bottom" constant="29" id="92O-3T-xIw"/>
+                            <constraint firstItem="kjM-yS-CvZ" firstAttribute="leading" secondItem="VJn-94-V4m" secondAttribute="leading" id="Dny-JU-bCx"/>
+                            <constraint firstItem="eBK-V0-zLC" firstAttribute="leading" secondItem="d8v-z7-QWA" secondAttribute="trailing" constant="8" symbolic="YES" id="TCO-J2-bgd"/>
+                            <constraint firstItem="kjM-yS-CvZ" firstAttribute="top" secondItem="VJn-94-V4m" secondAttribute="bottom" constant="20" id="VFB-Mu-N42"/>
+                            <constraint firstItem="VJn-94-V4m" firstAttribute="leading" secondItem="lmW-lF-UsK" secondAttribute="leadingMargin" id="a09-Zt-KIZ"/>
+                            <constraint firstItem="VJn-94-V4m" firstAttribute="trailing" secondItem="kjM-yS-CvZ" secondAttribute="trailing" id="eLi-9j-ErL"/>
+                            <constraint firstItem="kjM-yS-CvZ" firstAttribute="trailing" secondItem="lmW-lF-UsK" secondAttribute="trailingMargin" id="hTu-gz-4Xs"/>
+                            <constraint firstItem="VJn-94-V4m" firstAttribute="leading" secondItem="d8v-z7-QWA" secondAttribute="leading" id="nQv-CX-J7R"/>
+                            <constraint firstItem="cak-hw-MEA" firstAttribute="leading" secondItem="lmW-lF-UsK" secondAttribute="leadingMargin" constant="68" id="slt-9C-64N"/>
+                            <constraint firstItem="cak-hw-MEA" firstAttribute="top" secondItem="kjM-yS-CvZ" secondAttribute="bottom" constant="21" id="st7-OI-2hn"/>
+                            <constraint firstItem="d8v-z7-QWA" firstAttribute="top" secondItem="7kX-n0-FPM" secondAttribute="bottom" constant="21" id="wpf-s5-vpx"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Agregar Mascota" id="OSX-9b-Q6p"/>
+                    <connections>
+                        <outlet property="fotoMascota" destination="d8v-z7-QWA" id="ZuL-Ph-ba9"/>
+                        <outlet property="txtDescripcion" destination="kjM-yS-CvZ" id="mHN-UH-uED"/>
+                        <outlet property="txtnombre" destination="VJn-94-V4m" id="0VM-UX-yAO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZCR-rc-HlC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2111" y="1101"/>
         </scene>
         <!--Mascotas-->
         <scene sceneID="btF-Ty-uQo">
@@ -292,17 +387,17 @@
                                                     <rect key="frame" x="0.0" y="2" width="141" height="142"/>
                                                     <animations/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Edad" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QU3-sN-a2U">
-                                                    <rect key="frame" x="149" y="33" width="133" height="21"/>
-                                                    <animations/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                    <color key="textColor" red="0.50980392159999999" green="1" blue="0.41176470590000003" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Descripcion fdggfgfgggggg fghghghgggggggggggggggg" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5vp-4d-xKq">
                                                     <rect key="frame" x="148" y="62" width="134" height="22"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" red="0.50980392159999999" green="1" blue="0.41176470590000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Edad" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QU3-sN-a2U">
+                                                    <rect key="frame" x="149" y="33" width="133" height="21"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <color key="textColor" red="0.50980392159999999" green="1" blue="0.41176470590000003" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -332,6 +427,7 @@
                                             <outlet property="imageView" destination="Bnz-eL-fN1" id="MLY-CA-i1z"/>
                                             <outlet property="labelEdad" destination="QU3-sN-a2U" id="cYX-Ws-I5M"/>
                                             <outlet property="titleLabel" destination="Hex-za-rbG" id="fKZ-zT-ba7"/>
+                                            <segue destination="g4o-CQ-RT9" kind="show" identifier="mostrarMascota" id="a5R-Dp-UAm"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -350,6 +446,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Mascotas" id="R04-Zs-f2a">
+                        <barButtonItem key="backBarButtonItem" title="Atras" id="gbc-WG-hwv"/>
                         <barButtonItem key="leftBarButtonItem" title="Salir" id="YHr-B3-vY1">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
@@ -359,7 +456,6 @@
                     </navigationItem>
                     <connections>
                         <outlet property="collectionViewMascotas" destination="yIY-V4-rd1" id="zUW-sn-HkT"/>
-                        <segue destination="g4o-CQ-RT9" kind="show" id="xGd-nr-mXk"/>
                         <segue destination="bga-DP-Qvz" kind="show" identifier="cerrarSesion" id="6zC-gm-afy"/>
                     </connections>
                 </viewController>
@@ -367,10 +463,10 @@
             </objects>
             <point key="canvasLocation" x="1349" y="294"/>
         </scene>
-        <!--View Controller-->
+        <!--Mascota View Controller-->
         <scene sceneID="evy-dW-uPr">
             <objects>
-                <viewController id="g4o-CQ-RT9" sceneMemberID="viewController">
+                <viewController id="g4o-CQ-RT9" customClass="MascotaViewController" customModule="Huellitapp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="HzC-PA-ciL"/>
                         <viewControllerLayoutGuide type="bottom" id="rGj-ER-t68"/>
@@ -379,23 +475,135 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FcN-eY-nmR">
-                                <rect key="frame" x="0.0" y="64" width="607" height="487"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Descripcion" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="none" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="91c-kI-BDz">
+                                <rect key="frame" x="20" y="362" width="560" height="84"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.50980392159999999" green="1" blue="0.41176470590000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Edad" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0xo-sk-Dde">
+                                <rect key="frame" x="20" y="464" width="560" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.50980392159999999" green="1" blue="0.41176470590000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FcN-eY-nmR">
+                                <rect key="frame" x="20" y="86" width="560" height="256"/>
                                 <animations/>
                             </imageView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="rGj-ER-t68" firstAttribute="top" secondItem="FcN-eY-nmR" secondAttribute="bottom" constant="209" id="1YT-kc-kj6"/>
+                            <constraint firstItem="FcN-eY-nmR" firstAttribute="top" secondItem="HzC-PA-ciL" secondAttribute="bottom" constant="22" id="3MO-x8-Ffw"/>
+                            <constraint firstItem="FcN-eY-nmR" firstAttribute="leading" secondItem="UnV-lz-luq" secondAttribute="leadingMargin" id="IXO-yc-0Eh"/>
+                            <constraint firstItem="FcN-eY-nmR" firstAttribute="trailing" secondItem="UnV-lz-luq" secondAttribute="trailingMargin" id="kSO-4a-nbP"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="Zwc-aC-cTN">
+                        <barButtonItem key="backBarButtonItem" title="atras" id="pWb-yW-bZR"/>
+                        <rightBarButtonItems>
+                            <barButtonItem title="Mensaje" id="TMW-SZ-yEe">
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </barButtonItem>
+                            <barButtonItem title="Galleria" id="6bu-Jy-VEf">
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <segue destination="ROg-l6-Cu4" kind="show" identifier="mostrarGalleria" id="zuQ-gX-FGw"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="fotoMascota" destination="FcN-eY-nmR" id="GU8-Ch-Sz9"/>
+                        <outlet property="lbldescripcion" destination="91c-kI-BDz" id="Jy7-So-Xmx"/>
+                        <outlet property="lbledad" destination="0xo-sk-Dde" id="3Se-Tg-JIq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VXr-ag-oJF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2123" y="294"/>
+            <point key="canvasLocation" x="2076" y="294"/>
+        </scene>
+        <!--Galleria-->
+        <scene sceneID="aSg-yv-wb9">
+            <objects>
+                <viewController id="ROg-l6-Cu4" customClass="GalleriaViewController" customModule="Huellitapp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="CeD-OX-w9Q"/>
+                        <viewControllerLayoutGuide type="bottom" id="TGz-2z-skB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="cHF-G6-qKs">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="fUH-WR-wm2">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="g4w-gh-nSs">
+                                    <size key="itemSize" width="250" height="250"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="10" minY="10" maxX="0.0" maxY="10"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="itemGalleria" id="ZFD-1f-jZB" customClass="ItemgalleriaCollectionViewCell" customModule="Huellitapp" customModuleProvider="target">
+                                        <rect key="frame" x="10" y="74" width="250" height="250"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="250" height="250"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="O73-Ke-KJU">
+                                                    <rect key="frame" x="2" y="0.0" width="248" height="256"/>
+                                                    <animations/>
+                                                </imageView>
+                                            </subviews>
+                                            <animations/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstItem="O73-Ke-KJU" firstAttribute="leading" secondItem="ZFD-1f-jZB" secondAttribute="leadingMargin" constant="-6" id="Obb-Pd-vpy"/>
+                                            <constraint firstAttribute="trailing" secondItem="O73-Ke-KJU" secondAttribute="trailing" id="QKf-wN-9tb"/>
+                                            <constraint firstItem="O73-Ke-KJU" firstAttribute="top" secondItem="ZFD-1f-jZB" secondAttribute="top" id="Smr-NC-pUP"/>
+                                            <constraint firstAttribute="bottomMargin" secondItem="O73-Ke-KJU" secondAttribute="bottom" constant="-14" id="ahL-SS-S2a"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="fotoMascota" destination="O73-Ke-KJU" id="yJF-ES-8ze"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="ROg-l6-Cu4" id="0Vk-eQ-Aib"/>
+                                    <outlet property="delegate" destination="ROg-l6-Cu4" id="23z-eh-nbf"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="fUH-WR-wm2" firstAttribute="leading" secondItem="cHF-G6-qKs" secondAttribute="leading" id="2Jg-P1-ipx"/>
+                            <constraint firstItem="fUH-WR-wm2" firstAttribute="top" secondItem="cHF-G6-qKs" secondAttribute="top" id="MlI-iw-E3z"/>
+                            <constraint firstAttribute="trailing" secondItem="fUH-WR-wm2" secondAttribute="trailing" id="j1d-uL-IgI"/>
+                            <constraint firstItem="fUH-WR-wm2" firstAttribute="bottom" secondItem="TGz-2z-skB" secondAttribute="top" id="pSf-ev-xcX"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Galleria" id="JlI-XI-n1d"/>
+                    <connections>
+                        <outlet property="collectionGalleria" destination="fUH-WR-wm2" id="KWE-OB-N3r"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="41f-47-LKW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2756" y="294"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="fYP-80-0yC">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Mgs-ua-sOa" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController navigationBarHidden="YES" id="fyz-Co-gke" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="NYJ-sr-qYu">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -406,6 +614,7 @@
                         <segue destination="mjt-qo-qJx" kind="relationship" relationship="rootViewController" id="pR6-XE-SBm"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mgs-ua-sOa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1164" y="630"/>
         </scene>
@@ -623,6 +832,6 @@
         <image name="12064452_10207509501193409_1957503980_n" width="800" height="800"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="l6I-lW-lca"/>
+        <segue reference="6zC-gm-afy"/>
     </inferredMetricsTieBreakers>
 </document>

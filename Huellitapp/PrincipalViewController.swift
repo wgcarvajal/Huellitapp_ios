@@ -124,8 +124,10 @@ class PrincipalViewController: UIViewController , UICollectionViewDataSource, UI
     }
     
     func cargardata(){
-        let query = PFQuery(className: "mascota")
         
+        var currentuser = PFUser.currentUser()
+        let query = PFQuery(className: "mascota")
+        query.whereKey("username", notEqualTo: currentuser!.username!)
         query.findObjectsInBackgroundWithBlock { (objects:[PFObject]?, error: NSError?) -> Void in
             
             if error == nil{
@@ -142,6 +144,22 @@ class PrincipalViewController: UIViewController , UICollectionViewDataSource, UI
             }
         }
     }
+    
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if segue.identifier == "mostrarMascota"{
+            
+            let indexPaths = self.collectionViewMascotas.indexPathsForSelectedItems()!
+            let indexPath = indexPaths[0] as NSIndexPath
+            
+            let vc = segue.destinationViewController as! MascotaViewController
+            vc.mascota = mascotas[indexPath.row]
+        }
+        
+    }
+    
+    
     
     
 
